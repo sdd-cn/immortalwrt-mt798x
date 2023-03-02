@@ -56,12 +56,17 @@ To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sens
   - For more details, please see [Build system setup](https://openwrt.org/docs/guide-developer/build-system/install-buildsystem) documentation.
 
   ### Quickstart
-  1. Run `git clone -b <branch> --single-branch https://github.com/immortalwrt/immortalwrt` to clone the source code.
-  2. Run `cd immortalwrt` to enter source directory.
+  1. Run `git clone https://github.com/hanwckf/immortalwrt-mt798x` to clone the source code.
+  2. Run `cd immortalwrt-mt798x` to enter source directory.
   3. Run `./scripts/feeds update -a` to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
   4. Run `./scripts/feeds install -a` to install symlinks for all obtained packages into package/feeds/
-  5. Run `make menuconfig` to select your preferred configuration for the toolchain, target system & firmware packages.
-  6. Run `make` to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
+  5. Run `Use the prefconfig directory internal preset configuration file as the configuration template
+         1 # For MT7981, it is recommended to use mt7981-ax3000.config
+            cp -f defconfig/mt7981-ax3000.config .config
+         2 # For MT7986, it is recommended to use mt7986-ax6000.config
+           #cp -f defconfig/mt7986-ax6000.config .config
+  6. Run `make menuconfig` to select your preferred configuration for the toolchain, target system & firmware packages.
+  7. Run `make V=s` to build your firmware. This will download all sources, build the cross-compile toolchain and then cross-compile the GNU/Linux kernel & all chosen applications for your target system.
 
   ### Related Repositories
   The main repository uses multiple sub-repositories to manage packages of different categories. All packages are installed via the ImmortalWrt package manager called opkg. If you're looking to develop the web interface or port packages to ImmortalWrt, please find the fitting repository below.
