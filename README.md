@@ -60,7 +60,7 @@ To build your own firmware you need a GNU/Linux, BSD or MacOSX system (case sens
   2. Run `cd immortalwrt-mt798x` to enter source directory.
   3. Run `./scripts/feeds update -a` to obtain all the latest package definitions defined in feeds.conf / feeds.conf.default
   4. Run `./scripts/feeds install -a` to install symlinks for all obtained packages into package/feeds/
-  5. Run `Use the defconfig directory internal preset configuration file as the configuration template
+  5. Run Use <defconfig> directory internal preset configuration file as the configuration template
          
          1 # For MT7981, it is recommended to use mt7981-ax3000.config
             cp -f defconfig/mt7981-ax3000.config .config
